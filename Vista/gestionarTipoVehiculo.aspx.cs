@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controlador.TipoVehiculo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,29 @@ namespace Vista
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            int idTipoVehiculo = Int32.Parse(txtId.Text);
+            string nameTipoVehiculo = TxtName.Text;
+
+            LogicaControladorTipoVehiculo negocioAddTipoVehiculo = new LogicaControladorTipoVehiculo();
+
+            int resultadoAddTipoVehiculo = negocioAddTipoVehiculo.NegociarInsertTipoVehiculo(idTipoVehiculo, nameTipoVehiculo);
+            
+            if(resultadoAddTipoVehiculo > 0)
+            {
+                lblMensaje.Text = "Registro Éxitoso";
+            } else
+            {
+                lblMensaje.Text = "No se pudo hacerle registro";
+            }
+
+            negocioAddTipoVehiculo = null;
+            
+
+        }
+
+     
     }
 }

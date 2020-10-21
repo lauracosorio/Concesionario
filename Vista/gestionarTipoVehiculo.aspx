@@ -56,13 +56,20 @@
             <label for="txtName">
                 Name
             </label>
-            <asp:TextBox ID="TextName" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="TxtName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-row">
             <div class="col-8">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-primary" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-primary" OnClick="btnAdd_Click" />
             </div>
+        </div>
+
+        <div class="form-row">
+            <asp:Label ID="lblMensaje" runat="server" ForeColor="Blue" EnableViewState="false">
+
+            </asp:Label>
+
         </div>
     </form>
 

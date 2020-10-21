@@ -18,7 +18,7 @@ namespace Modelo.TipoVehiculo
 
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
             
-            SqlCommand _comando = new SqlCommand("registrarTipoVehiculo", _conexion);
+            SqlCommand _comando = new SqlCommand("registrarTipoVehiculos", _conexion);
 
             _comando.CommandType = CommandType.StoredProcedure;
 

@@ -33,13 +33,13 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
-        /// Control TextName.
+        /// Control TxtName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextName;
+        protected global::System.Web.UI.WebControls.TextBox TxtName;
 
         /// <summary>
         /// Control btnAdd.
@@ -49,5 +49,14 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }
