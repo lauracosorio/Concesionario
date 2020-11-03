@@ -6,19 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo.TipoVehiculo
+namespace Modelo.Contrato
 {
-    public class MetodosCRUDTipoVehiculo
+   public class metodosCRUDContrato
     {
-        //crear metodo que permita ejecutar procedimientos almacenados 
-        //crear tipo comando INSERT
-        public static SqlCommand crearComandoTipoProcedimientoAlmacenadoInsertarTV() 
+        public static SqlCommand InsertarContrato()
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
 
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
-            
-            SqlCommand _comando = new SqlCommand("registrarTipoVehiculos", _conexion);
+
+            SqlCommand _comando = new SqlCommand("registrarContrato", _conexion);
 
             _comando.CommandType = CommandType.StoredProcedure;
 
@@ -26,16 +24,18 @@ namespace Modelo.TipoVehiculo
         }
 
         //Ejecutar el tipo de comando INSERT
-        public static int EjecutarComandoTipoProcedimientoAlmacenadoInsertarTV(SqlCommand comando)
+        public static int EjecutarInsertarContrato(SqlCommand comando)
         {
             try
             {
                 comando.Connection.Open();
                 return comando.ExecuteNonQuery();
-            } catch
+            }
+            catch
             {
                 throw;
-            } finally
+            }
+            finally
             {
                 comando.Connection.Dispose();
                 comando.Connection.Close();
@@ -43,7 +43,7 @@ namespace Modelo.TipoVehiculo
         }
 
         //crear tipo comando SELECT
-        public static SqlCommand crearComandoSelectTV()
+        public static SqlCommand crearSeleccionContrato()
         {
             //usar la conexión
             string _cadenaConexion = Configuracion.CadenaConexion;
@@ -60,7 +60,7 @@ namespace Modelo.TipoVehiculo
         }
 
         //Ejecutar el tipo de comando SELECT
-        public static DataTable EjecutarComandoSelectTV(SqlCommand comando)
+        public static DataTable EjecutarSeleccionContrato(SqlCommand comando)
         {
             DataTable _table = new DataTable();
             try
@@ -84,7 +84,7 @@ namespace Modelo.TipoVehiculo
         }
 
         //crear tipo comando Update
-        public static SqlCommand CrearComandoUpdateTV()
+        public static SqlCommand CrearModificacionContrato()
         {
             //usar la conexión
             string _cadenaConexion = Configuracion.CadenaConexion;
@@ -92,15 +92,15 @@ namespace Modelo.TipoVehiculo
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
 
             //crear la instrucción select
-            SqlCommand _comando = new SqlCommand("updateTipoVehiculo", _conexion );
-         
+            SqlCommand _comando = new SqlCommand("updateContrato", _conexion);
+
             _comando.CommandType = CommandType.StoredProcedure;
 
             return _comando;
         }
 
         //Ejecutar el tipo de comando Update
-        public static int EjecutarComandoUpdateTV(SqlCommand comando)
+        public static int EjecutarModificacionContrato(SqlCommand comando)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace Modelo.TipoVehiculo
         }
 
         //crear tipo comando DELETE
-        public static SqlCommand CrearComandoDeleteTV()
+        public static SqlCommand borrarContrato()
         {
             //usar la conexión
             string _cadenaConexion = Configuracion.CadenaConexion;
@@ -128,7 +128,7 @@ namespace Modelo.TipoVehiculo
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
 
             //crear la instrucción select
-            SqlCommand _comando = new SqlCommand("deleteTipoVehiculo", _conexion);
+            SqlCommand _comando = new SqlCommand("deleteContrato", _conexion);
 
             _comando.CommandType = CommandType.StoredProcedure;
 
@@ -136,7 +136,7 @@ namespace Modelo.TipoVehiculo
         }
 
         //Ejecutar el tipo de comando DELETE
-        public static int EjecutarComandoDeleteTV(SqlCommand comando)
+        public static int EjecutarBorrarContrato(SqlCommand comando)
         {
             try
             {
@@ -154,6 +154,5 @@ namespace Modelo.TipoVehiculo
             }
 
         }
-
     }
 }

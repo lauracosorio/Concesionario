@@ -11,7 +11,7 @@ namespace Vista
 {
 
 
-    public partial class gestionarTipoVehiculo
+    public partial class gestionarContrato
     {
 
         /// <summary>
@@ -33,13 +33,22 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
-        /// Control TxtName.
+        /// Control TxtIdV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtName;
+        protected global::System.Web.UI.WebControls.TextBox TxtIdV;
+
+        /// <summary>
+        /// Control TxtIdTC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIdTC;
 
         /// <summary>
         /// Control btnAdd.

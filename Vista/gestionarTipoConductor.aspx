@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionarTipoVehiculo.aspx.cs" Inherits="Vista.gestionarTipoVehiculo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionarTipoConductor.aspx.cs" Inherits="Vista.gestionarTipoConductor" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <title>Tipo Vehiculo</title>
+    <title>Tipo Conductor</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -17,13 +17,13 @@
     <nav class="navbar navbar-expand-lg navbar-ligth bg-light">
         <div class=" collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="gestionarTipoVehiculo.aspx">Registro Tipo Vehiculos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="gestionarVehiculos.aspx">Registro Vehiculos</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="gestionarTipoConductor.aspx">Registro Tipo Conductor</a>
                 </li>
                 <li class="nav-item">
@@ -41,7 +41,7 @@
     
     <div class="container">
         <br />
-        <h1> Gestión Tipos de Vehiculos</h1>
+        <h1> Gestión Tipo de Conductor</h1>
         <br />
 
     <form id="form1" runat="server">
@@ -61,12 +61,12 @@
 
         <div class="form-row">
             <div class="col-8">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAddTC_Click" />
             </div>
             <div class ="text-right col-4">
-                <asp:Button ID="btnList" runat="server" Text="List" class="btn btn-primary" OnClick ="btnList_Click"/>
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" class="btn btn-warning" OnClick ="btnUpdate_Click" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" class="btn btn-danger" OnClick ="btnDelete_Click" />
+                <asp:Button ID="btnList" runat="server" Text="List" class="btn btn-primary" OnClick ="btnListTC_Click"/>
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" class="btn btn-warning" OnClick ="btnUpdateTC_Click" />
+                <asp:Button ID="btnDelete" runat="server" Text="Delete" class="btn btn-danger" OnClick ="btnDeleteTC_Click" />
             </div>
         </div>
 
@@ -93,7 +93,5 @@
         </table>
     </form>
   </div>
-
-
 </body>
 </html>

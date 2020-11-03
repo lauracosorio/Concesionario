@@ -11,7 +11,7 @@ namespace Vista
 {
 
 
-    public partial class gestionarTipoVehiculo
+    public partial class gestionarVehiculos
     {
 
         /// <summary>
@@ -33,13 +33,49 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
-        /// Control TxtName.
+        /// Control TxtMarca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtName;
+        protected global::System.Web.UI.WebControls.TextBox TxtMarca;
+
+        /// <summary>
+        /// Control TxtModelo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtModelo;
+
+        /// <summary>
+        /// Control TxtMatricula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtMatricula;
+
+        /// <summary>
+        /// Control TxtAnio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtAnio;
+
+        /// <summary>
+        /// Control TxtIDV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtIDV;
 
         /// <summary>
         /// Control btnAdd.

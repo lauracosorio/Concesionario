@@ -11,7 +11,7 @@ namespace Vista
 {
 
 
-    public partial class gestionarTipoVehiculo
+    public partial class gestionarTipoConductor
     {
 
         /// <summary>

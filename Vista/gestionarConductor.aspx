@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionarTipoVehiculo.aspx.cs" Inherits="Vista.gestionarTipoVehiculo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gestionarConductor.aspx.cs" Inherits="Vista.gestionarConductor" %>
 
 <!DOCTYPE html>
 
@@ -6,10 +6,10 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <title>Tipo Vehiculo</title>
+    <title>Conductor</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             Concesionario
         </a>
@@ -17,10 +17,10 @@
     <nav class="navbar navbar-expand-lg navbar-ligth bg-light">
         <div class=" collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ">
-                <li class="nav-item active">
+               <li class="nav-item">
                     <a class="nav-link" href="gestionarTipoVehiculo.aspx">Registro Tipo Vehiculos</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="gestionarVehiculos.aspx">Registro Vehiculos</a>
                 </li>
                 <li class="nav-item">
@@ -38,10 +38,10 @@
             </ul>
         </div>
     </nav>
-    
+
     <div class="container">
         <br />
-        <h1> Gestión Tipos de Vehiculos</h1>
+        <h1> Gestión Conductores</h1>
         <br />
 
     <form id="form1" runat="server">
@@ -56,23 +56,41 @@
             <label for="txtName">
                 Nombre
             </label>
-            <asp:TextBox ID="TxtName" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+
+        <div class="form-group">
+            <label for="txtName">
+                Tipo Licencia 
+            </label>
+            <asp:TextBox ID="TxtLicencia" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+
+        <div class="form-group">
+            <label for="txtName">
+                Id Vehiculo
+            </label>
+            <asp:TextBox ID="TxtIdV" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+
+        <div class="form-group">
+            <label for="txtName">
+                Id Tipo Conductor
+            </label>
+            <asp:TextBox ID="TxtITC" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
 
         <div class="form-row">
             <div class="col-8">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="Agregar" CssClass="btn btn-success" OnClick="btnAddC_Click" />
             </div>
             <div class ="text-right col-4">
-                <asp:Button ID="btnList" runat="server" Text="List" class="btn btn-primary" OnClick ="btnList_Click"/>
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" class="btn btn-warning" OnClick ="btnUpdate_Click" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" class="btn btn-danger" OnClick ="btnDelete_Click" />
+                <asp:Button ID="btnList" runat="server" Text="Listar" class="btn btn-primary" OnClick ="btnListC_Click"/>
+                <asp:Button ID="btnUpdate" runat="server" Text="Modificar" class="btn btn-warning" OnClick ="btnUpdateC_Click"  />
+                <asp:Button ID="btnDelete" runat="server" Text="Eliminar" class="btn btn-danger" OnClick ="btnDeleteC_Click" />
             </div>
         </div>
-
-
-        
-
+        <br />
         <div class="form-row">
             <asp:Label ID="lblMensaje" runat="server" ForeColor="Blue" EnableViewState="false">
             </asp:Label>
@@ -84,8 +102,11 @@
                 <th>
                     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false">
                         <Columns>
-                            <asp:BoundField DataField="id" HeaderText="Id"/>
-                            <asp:BoundField DataField="nombre" HeaderText="Nombre"/>
+                            <asp:BoundField DataField="id" HeaderText="Id" />
+                            <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                            <asp:BoundField DataField="tipo_licencia" HeaderText="Tipo Licencia" />
+                            <asp:BoundField DataField="id_vehiculo" HeaderText="Id Vehiculo" />
+                            <asp:BoundField DataField="id_tipo_conductor" HeaderText="Id Tipo Conductor" />
                         </Columns>
                     </asp:GridView>
                 </th>
@@ -93,7 +114,5 @@
         </table>
     </form>
   </div>
-
-
 </body>
 </html>

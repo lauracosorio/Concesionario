@@ -6,61 +6,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo.TipoVehiculo
+namespace Modelo.Conductor
 {
-    public class MetodosCRUDTipoVehiculo
+  public class metodosCRUDConductor
     {
-        //crear metodo que permita ejecutar procedimientos almacenados 
-        //crear tipo comando INSERT
-        public static SqlCommand crearComandoTipoProcedimientoAlmacenadoInsertarTV() 
+        public static SqlCommand crearInsertarConductor()
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
 
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
-            
-            SqlCommand _comando = new SqlCommand("registrarTipoVehiculos", _conexion);
+
+            SqlCommand _comando = new SqlCommand("registrarConductor", _conexion);
 
             _comando.CommandType = CommandType.StoredProcedure;
 
             return _comando;
         }
 
-        //Ejecutar el tipo de comando INSERT
-        public static int EjecutarComandoTipoProcedimientoAlmacenadoInsertarTV(SqlCommand comando)
+        public static int ejecutarInsertarConductor(SqlCommand comando)
         {
             try
             {
                 comando.Connection.Open();
                 return comando.ExecuteNonQuery();
-            } catch
+            }
+            catch
             {
                 throw;
-            } finally
+            }
+            finally
             {
                 comando.Connection.Dispose();
                 comando.Connection.Close();
             }
         }
 
-        //crear tipo comando SELECT
-        public static SqlCommand crearComandoSelectTV()
+        public static SqlCommand crearSeleccionarConductor()
         {
-            //usar la conexión
             string _cadenaConexion = Configuracion.CadenaConexion;
 
             SqlConnection _conexion = new SqlConnection();
+
             _conexion.ConnectionString = _cadenaConexion;
 
             //crear la instrucción select
             SqlCommand _comando = new SqlCommand();
+
             _comando = _conexion.CreateCommand();
+
             _comando.CommandType = CommandType.Text;
 
             return _comando;
         }
 
         //Ejecutar el tipo de comando SELECT
-        public static DataTable EjecutarComandoSelectTV(SqlCommand comando)
+        public static DataTable EjecutarSeleccionConductor(SqlCommand comando)
         {
             DataTable _table = new DataTable();
             try
@@ -69,7 +69,6 @@ namespace Modelo.TipoVehiculo
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = comando;
                 adapter.Fill(_table);
-
             }
             catch (Exception Ex)
             {
@@ -83,24 +82,21 @@ namespace Modelo.TipoVehiculo
             return _table;
         }
 
-        //crear tipo comando Update
-        public static SqlCommand CrearComandoUpdateTV()
+        public static SqlCommand crearModificarConductor()
         {
-            //usar la conexión
             string _cadenaConexion = Configuracion.CadenaConexion;
 
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
 
             //crear la instrucción select
-            SqlCommand _comando = new SqlCommand("updateTipoVehiculo", _conexion );
-         
+            SqlCommand _comando = new SqlCommand("updateConductor", _conexion);
+
             _comando.CommandType = CommandType.StoredProcedure;
 
             return _comando;
         }
 
-        //Ejecutar el tipo de comando Update
-        public static int EjecutarComandoUpdateTV(SqlCommand comando)
+        public static int ejecutarModificarConductor(SqlCommand comando)
         {
             try
             {
@@ -116,27 +112,23 @@ namespace Modelo.TipoVehiculo
                 comando.Connection.Dispose();
                 comando.Connection.Close();
             }
-
         }
 
-        //crear tipo comando DELETE
-        public static SqlCommand CrearComandoDeleteTV()
+        public static SqlCommand crearBorrarConductor()
         {
-            //usar la conexión
             string _cadenaConexion = Configuracion.CadenaConexion;
 
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
 
             //crear la instrucción select
-            SqlCommand _comando = new SqlCommand("deleteTipoVehiculo", _conexion);
+            SqlCommand _comando = new SqlCommand("deleteConductor", _conexion);
 
             _comando.CommandType = CommandType.StoredProcedure;
 
             return _comando;
         }
 
-        //Ejecutar el tipo de comando DELETE
-        public static int EjecutarComandoDeleteTV(SqlCommand comando)
+        public static int ejecutarBorrarConductor(SqlCommand comando)
         {
             try
             {
@@ -152,8 +144,6 @@ namespace Modelo.TipoVehiculo
                 comando.Connection.Dispose();
                 comando.Connection.Close();
             }
-
         }
-
     }
 }
